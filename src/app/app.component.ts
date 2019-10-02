@@ -46,4 +46,27 @@ export class AppComponent {
    const deletedItem = this.allItems.splice(index, 1);
    this.value -= deletedItem[0]['denomination'] * deletedItem[0]['total'];
   }
+
+  breakMyCash() {
+    this.allItems = [];
+    this.value = 0;
+    let amtToBreak = this.amount;
+    this.prepareItems(amtToBreak, 2000);
+    amtToBreak = amtToBreak % 2000;
+    if (amtToBreak > 0) {
+      this.prepareItems(amtToBreak, 500);
+    }
+    amtToBreak = amtToBreak % 500;
+    if (amtToBreak > 0) {
+      this.prepareItems(amtToBreak, 200);
+    }
+  }
+
+  prepareItems(amtToBreak, denomination) {
+    let total;
+    total = (amtToBreak / denomination);
+    this.item['denomination'] = denomination;
+    this.item['total'] = Math.floor(total);
+    this.addItem();
+  }
 }

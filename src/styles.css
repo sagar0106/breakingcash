@@ -103,3 +103,11 @@ resize: none;
   background-color: #df3341;
   border-color: #df3341;
 }
+.add-asttributes-wrapper{float:left; width:0px; position:relative; top:14px; }
+.add-asttributes-wrapper .remove-btn{position:relative; font-size:14px; margin:-20px -30px 0px 0px;  
+  float:right; width:30px; height:30px; color:#fff; background:seagreen;padding:0px 8px;  
+  border-radius:100%; line-height:30px; text-decoration: none; text-align:center; border:0px;}
+  .additem-icon{position:relative; font-size:14px; margin:0px -30px 0px 0px;  
+    float:right; background:seagreen; width:30px; height:30px; color:#fff; padding:0px 8px;  
+    border-radius:100%; line-height:30px; text-decoration: none; text-align:center; border:0px;          } 
+  .additem-icon:hover{color:#fff; background:seagreen; text-decoration: none   }
