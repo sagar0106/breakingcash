@@ -14,12 +14,36 @@
           </label>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-3">
         <div class="form-group">
           <button type="button" class="btn btn-success" (click)="breakMyCash()" *ngIf="!allItems.length">Break my cash</button>
           <button type="button" class="btn btn-success" (click)="breakFromHere()" *ngIf="allItems.length">Break the remaining</button>
           </div>
           </div>
+
+          <!-- <div class="col-md-4">
+            <div class="row">
+                <input type="number" class="" name="addRemoveDenomination" [(ngModel)]="newDenomination"/>
+                <button type="button" for="addRemoveDenomination" class="btn btn-success" (click)="addRemoveDenomination()">Add/Remove Denomination</button>
+              </div>
+              </div> -->
+              <div class="col-md-3">
+                  <div class="material-form-group">
+                      <input type="number" class="" name="addRemoveDenomination" [(ngModel)]="newDenomination" (keypress)="checkDenominationExists()"/>
+                      <label for="addRemoveDenomination" class="form-control-label">
+                          Add/Remove Denomination
+                        </label> 
+                           
+                     </div>
+                   
+                    </div>
+                    <div class="add-asttributes-wrapper" *ngIf="newDenomination && !denominationExists">
+                        <button type="button" class="glyphicon glyphicon-plus  button-plus-aad additem-icon"
+                        (click)="addDenomination()"></button>
+                      </div> 
+                      <div class="add-asttributes-wrapper" *ngIf="newDenomination && denominationExists">
+                          <button type="button" class="glyphicon glyphicon-remove btn-xs btn remove-btn" (click)="removeDenomination()"></button>
+                        </div> 
     </div>
     <p style="color: red">{{showErrMsgValid}}</p>
 

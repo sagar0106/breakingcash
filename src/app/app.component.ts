@@ -13,6 +13,8 @@ export class AppComponent {
   showErrMsg;
   showErrMsgValid;
   denominations = [2000, 500, 200, 100, 50, 20, 10];
+  newDenomination;
+  denominationExists = false;
   // #077696
 
   addItem() {
@@ -85,5 +87,24 @@ export class AppComponent {
     this.item['denomination'] = denomination;
     this.item['total'] = Math.floor(total);
     this.addItem();
+  }
+
+  checkDenominationExists() {
+    const denominationFound = this.denominations.indexOf(this.newDenomination);
+    if (denominationFound > -1) {
+      this.denominationExists = true;
+    } else {
+      this.denominationExists = false;
+    }
+  }
+  addDenomination() {
+    this.denominations.push(this.newDenomination);
+    this.newDenomination = '';
+    this.denominationExists = false;
+  }
+  removeDenomination() {
+    this.denominations.splice(this.denominations.indexOf(this.newDenomination), 1);
+    this.newDenomination = '';
+    this.denominationExists = false;
   }
 }
